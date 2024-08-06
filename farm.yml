@@ -1,0 +1,49 @@
+---
+title: "VNC Desktop"
+cluster: farm
+form:
+  - bc_vnc_idle
+  - desktop
+  - auto_accounts
+  - auto_queues
+  - cores
+  - mem
+  - gpu_num
+  - bc_num_hours
+  - bc_vnc_resolution
+  - bc_email_on_started
+
+attributes:
+  desktop: "xfce"
+  bc_num_slots: 1
+  node_type: null
+  auto_accounts:
+    help: |
+      Select the slurm group account (i.e adamgrp)
+  auto_queues:
+    help: |
+      Select a slurm partition. **We strongly recommend a high priority partition**
+  cores:
+    widget: "number_field"
+    label: "Number of cores"
+    value: 8
+    min: 1
+    max: 256
+    help: |
+      Enter the number of cores needed for your job
+  mem:
+    widget: "number_field"
+    label: "Amount of memory"
+    value: 32
+    min: 4
+    max: 4096
+    help: |
+      Enter the amount of RAM in GB you need for your job
+  gpu_num:
+    widget: "number_field"
+    label: "Number of GPUs"
+    value: 0
+    min: 0
+    max: 8
+    help: |
+      Enter the amount of GPUs needed for your job
