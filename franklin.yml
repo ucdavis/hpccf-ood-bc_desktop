@@ -1,6 +1,6 @@
 ---
 title: "VNC Desktop"
-cluster: farm
+cluster: franklin
 form:
   - bc_vnc_idle
   - desktop
