@@ -1,6 +1,7 @@
 ---
 title: "VNC Desktop"
 cluster: farm
+submit: "submit/submit.yml.erb"
 form:
   - bc_vnc_idle
   - desktop
