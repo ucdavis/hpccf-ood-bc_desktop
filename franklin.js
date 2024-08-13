@@ -19,17 +19,26 @@ function toggle_visibilty_of_form_group(form_id, show) {
 /**
  *  Toggle the visibilty of the "gpu_num" field when a gpu queue is selected
  *
- *  low2: hidden
- *  gpuh: visible
- *  bgpu: visible
+ *  high: hidden
+ *  low: visible
+ *  *-gpu: visible
  */
 function toggle_gpu_num_visibility() {
   let queue = $("#batch_connect_session_context_auto_queues");
-  console.log(queue.val());
+  let gpu_queues = [
+    "low",
+    "jalettsgrp-gpu",
+    "jawdatgrp-gpu",
+    "mmgdept-gpu",
+    "cashjngrp-gpu",
+    "mmaldogrp-gpu",
+    "cnsdept-gpu",
+    "ajfishergrp-gpu",
+  ];
 
   toggle_visibilty_of_form_group(
     '#batch_connect_session_context_gpu_num',
-    queue.val().includes("gpu")
+    gpu_queues.includes(queue.val())
   );
 }
 
