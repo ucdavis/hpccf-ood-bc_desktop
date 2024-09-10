@@ -1,6 +1,6 @@
 ---
 title: "VNC Desktop"
-cluster: farm
+cluster: hive 
 submit: "submit/submit.yml.erb"
 form:
   - bc_vnc_idle
