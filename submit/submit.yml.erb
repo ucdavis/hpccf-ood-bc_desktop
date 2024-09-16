@@ -1,3 +1,13 @@
 ---
 batch_connect:
   template: vnc
+script:
+  native:
+    - "--cpus-per-task"
+    - "<%= cores %>"
+    - "--mem"
+    - "<%= mem %>G"
+    <%- if gpu_num.to_i > 0 -%>
+    - "--gres"
+    - "gpu:<%= gpu_num.to_s %>"
+    <%- end -%>
