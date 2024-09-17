@@ -6,7 +6,7 @@ batch_connect:
     module purge
     module load conda/websockify turbovnc
     export WEBSOCKIFY_CMD="websockify"
-    export TURBOVNC_SERVER_UTILS="/cvmfs/hpc.ucdavis.edu/sw/wrappers/turbovnc/"
+    export TURBOVNC_SERVER_UTILS="/cvmfs/hpc.ucdavis.edu/sw/wrappers/turbovnc"
     $TURBOVNC_SERVER_UTILS/turbovnc-ood
     %s
 script:
