@@ -1,6 +1,14 @@
 ---
 batch_connect:
   template: vnc
+  script_wrapper: |
+    source /etc/profile
+    module purge
+    module load conda/websockify turbovnc
+    export WEBSOCKIFY_CMD="websockify"
+    export TURBOVNC_SERVER_UTILS="/cvmfs/hpc.ucdavis.edu/sw/wrappers/turbovnc/"
+    $TURBOVNC_SERVER_UTILS/turbovnc-ood
+    %s
 script:
   native:
     - "--cpus-per-task"
@@ -11,3 +19,4 @@ script:
     - "--gres"
     - "gpu:<%= gpu_num.to_s %>"
     <%- end -%>
+  copy_environment: true
