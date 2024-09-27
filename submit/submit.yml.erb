@@ -2,12 +2,13 @@
 batch_connect:
   template: vnc
   script_wrapper: |
-    source /etc/profile
+    source /etc/profile.d/modules.sh
+    source /etc/profile.d/puppet-agent.sh
     module purge
     module load conda/websockify turbovnc
     export WEBSOCKIFY_CMD="websockify"
-    export TURBOVNC_SERVER_UTILS="/cvmfs/hpc.ucdavis.edu/sw/wrappers/turbovnc"
-    $TURBOVNC_SERVER_UTILS/turbovnc-ood
+    export PATH=$PATH:"/cvmfs/hpc.ucdavis.edu/sw/wrappers/turbovnc"
+    turbovnc-ood
     %s
 script:
   native:
@@ -19,4 +20,3 @@ script:
     - "--gres"
     - "gpu:<%= gpu_num.to_s %>"
     <%- end -%>
-  copy_environment: true
