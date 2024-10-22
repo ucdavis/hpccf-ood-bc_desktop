@@ -1,5 +1,5 @@
 ---
-title: "VNC Desktop"
+title: "Linux Desktop"
 cluster: hive 
 submit: "submit/submit.yml.erb"
 form:

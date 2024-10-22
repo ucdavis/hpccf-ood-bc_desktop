@@ -4,7 +4,6 @@ batch_connect:
   script_wrapper: |
     source /etc/profile.d/modules.sh
     source /etc/profile.d/puppet-agent.sh
-    module purge
     module load conda/websockify turbovnc
     export WEBSOCKIFY_CMD="websockify"
     export PATH=$PATH:"/cvmfs/hpc.ucdavis.edu/sw/wrappers/turbovnc"
